@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+        width: 350px;
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f8;
+        margin: 0;
+        padding: 15px;
+        color: #333;
+    }
+    .container {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        padding: 20px;
+    }
+    h1 {
+        text-align: center;
+        color: #2c3e50;
+        margin-bottom: 20px;
+    }
+    .slider-container {
+        margin-bottom: 20px;
+    }
+    #summaryLevel {
+        width: 100%;
+        -webkit-appearance: none;
+        height: 10px;
+        background: #e0e0e0;
+        outline: none;
+        opacity: 0.7;
+        transition: opacity .2s;
+        border-radius: 5px;
+        margin-top:10px;
+    }
+    #summaryLevel:hover {
+        opacity: 1;
+    }
+    #summaryLevel::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        background: #4CAF50;
+        cursor: pointer;
+        border-radius: 50%;
+    }
+    #summaryLevelLabel {
+        display: flex;
+        justify-content: space-between;
+        color: #7f8c8d;
+        font-size: 0.9em;
+        margin-top:10px;
+    }
+    #summarize {
+        width: 100%;
+        padding: 10px;
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    #summarize:hover {
+        background-color: #2980b9;
+    }
+    #summary {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #f9f9f9;
+        border-radius: 5px;
+        min-height: 100px;
+        border: 1px solid #e0e0e0;
+    }
+    .output-list li {
+        margin-bottom: 10px;
+    }
+
+    #characterCount {
+        color: #7f8c8d;
+        font-size: 0.9em;
+        text-align: right;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Lexi Lens - Summarizer</h1>
+    
+    <div class="slider-container">
+        <label for="summaryLevel">Summary Complexity</label>
+        <br/>
+        <input 
+            type="range" 
+            id="summaryLevel" 
+            min="1" 
+            max="5" 
+            value="3" 
+            step="1"
+        >
+        <div id="summaryLevelLabel">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+        </div>
+    </div>
+
+    <button id="summarize">&#10024; Summarize Selected Text</button>
+    
+    <div id="summary">
+        Your summary will appear here...
+    </div>
+    <br/>
+    <label id="characterCount"></label>
+</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>    
