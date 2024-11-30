@@ -9,12 +9,18 @@
     "scripting",
     "webRequest"
   ],
+  "content_scripts": [
+   {
+     "matches": ["<all_urls>"],
+     "css": ["popup.css"]
+   }
+  ],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "lexilens.svg",
-      "48": "lexilens.svg",
-      "128": "lexilens.svg"
+      "16": "lexilens.png",
+      "48": "lexilens.png",
+      "128": "lexilens.png"
     }
   }
 }
